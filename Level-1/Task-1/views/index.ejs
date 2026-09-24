@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Cognifyz Technologies</h1>
+        <h2>Internship Registration</h2>
+        <p>Enter your details below.</p>
+
+        <form action="/submit" method="POST">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" required>
+
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" required>
+
+            <label for="message">Why are you interested?</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </main>
+</body>
+</html>

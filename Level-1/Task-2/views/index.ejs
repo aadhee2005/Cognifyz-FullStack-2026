@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognifyz - Task 2 Registration</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Cognifyz Technologies</h1>
+        <h2>Internship Application</h2>
+        <p>Complete the form to submit your application.</p>
+
+        <form action="/submit" method="POST" onsubmit="return validateForm()">
+
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                minlength="3"
+                required
+                placeholder="Enter your full name"
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="example@gmail.com"
+            >
+
+            <label for="phone">Phone Number</label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                maxlength="10"
+                required
+                placeholder="10-digit mobile number"
+            >
+
+            <label for="course">Select Internship Domain</label>
+            <select id="course" name="course" required>
+                <option value="">-- Select Domain --</option>
+                <option value="Full Stack Development">Full Stack Development</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Artificial Intelligence">Artificial Intelligence</option>
+            </select>
+
+            <label for="message">Why do you want to join?</label>
+            <textarea
+                id="message"
+                name="message"
+                minlength="10"
+                required
+                placeholder="Write at least 10 characters"
+            ></textarea>
+
+            <p id="error" class="error"></p>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </main>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const course = document.getElementById("course").value;
+            const message = document.getElementById("message").value.trim();
+            const error = document.getElementById("error");
+
+            error.textContent = "";
+
+            if (name.length < 3) {
+                error.textContent = "Name must contain at least 3 characters.";
+                return false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                error.textContent = "Please enter a valid email.";
+                return false;
+            }
+
+            const phonePattern = /^[0-9]{10}$/;
+
+            if (!phonePattern.test(phone)) {
+                error.textContent = "Enter a valid 10-digit phone number.";
+                return false;
+            }
+
+            if (course === "") {
+                error.textContent = "Please select an internship domain.";
+                return false;
+            }
+
+            if (message.length < 10) {
+                error.textContent = "Message must contain at least 10 characters.";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>
