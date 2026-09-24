@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4 | Cognifyz Technologies</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#home" class="brand">Cognifyz<span>.</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#register">Register</a>
+      <a href="#about">About</a>
+      <a href="#help">Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME PAGE -->
+    <section id="home" class="page">
+      <div class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">COGNIFYZ TECHNOLOGIES · INTERNSHIP</span>
+          <h1>Build your<br><span>next chapter.</span></h1>
+          <p>
+            Create your account and take the first step toward
+            learning, growing, and building your future.
+          </p>
+          <a href="#register" class="primary-btn">Create an account →</a>
+        </div>
+
+        <div class="hero-card">
+          <div class="card-orbit">C</div>
+          <span class="mini-label">YOUR JOURNEY STARTS HERE</span>
+          <h2>Learn.<br>Build.<br>Become.</h2>
+          <div class="card-line"></div>
+          <p>Where Data Meets Intelligence</p>
+        </div>
+      </div>
+
+      <div class="task-info">
+        <span>LEVEL 2 · INTERMEDIATE</span>
+        <h2>Task 4: Complex Form Validation and Dynamic DOM Manipulation</h2>
+        <p>
+          Objective: Extend form validation and implement dynamic
+          updates to the DOM.
+        </p>
+      </div>
+    </section>
+
+    <!-- REGISTER PAGE -->
+    <section id="register" class="page">
+      <div class="form-layout">
+        <div class="form-intro">
+          <span class="eyebrow">CREATE YOUR PROFILE</span>
+          <h1>Start something<br><span>great.</span></h1>
+          <p>Complete the form to create your Cognifyz account.</p>
+
+          <div class="feature">
+            <span>01</span>
+            <div>
+              <h3>Secure registration</h3>
+              <p>Validate your details as you type.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span>02</span>
+            <div>
+              <h3>Instant feedback</h3>
+              <p>Get helpful feedback while completing the form.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-heading">
+            <span class="eyebrow">NEW ACCOUNT</span>
+            <h2>Create account</h2>
+            <p>Enter your details below to continue.</p>
+          </div>
+
+          <form id="registerForm" novalidate>
+            <div class="field">
+              <label for="fullName">Full name</label>
+              <input id="fullName" type="text" placeholder="e.g. Aadhi Kumar">
+              <small class="error" id="nameError"></small>
+            </div>
+
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" type="email" placeholder="you@example.com">
+              <small class="error" id="emailError"></small>
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="Create a strong password">
+              <div class="strength-track">
+                <div id="strengthBar"></div>
+              </div>
+              <small id="strengthText">Password strength: Not entered</small>
+              <div class="password-rules">
+                <span id="ruleLength">○ 8+ characters</span>
+                <span id="ruleUpper">○ Uppercase letter</span>
+                <span id="ruleLower">○ Lowercase letter</span>
+                <span id="ruleNumber">○ Number</span>
+                <span id="ruleSpecial">○ Special character</span>
+              </div>
+              <small class="error" id="passwordError"></small>
+            </div>
+
+            <div class="field">
+              <label for="confirmPassword">Confirm password</label>
+              <input id="confirmPassword" type="password" placeholder="Re-enter your password">
+              <small class="error" id="confirmError"></small>
+            </div>
+
+            <div class="field">
+              <label for="course">Area of interest</label>
+              <select id="course">
+                <option value="">Select your interest</option>
+                <option>Full Stack Development</option>
+                <option>Data Science</option>
+                <option>Artificial Intelligence</option>
+                <option>Machine Learning</option>
+                <option>Web Development</option>
+              </select>
+              <small class="error" id="courseError"></small>
+            </div>
+
+            <label class="terms">
+              <input type="checkbox" id="terms">
+              <span>I agree to the terms and conditions.</span>
+            </label>
+            <small class="error" id="termsError"></small>
+
+            <button type="submit" class="primary-btn submit-btn">
+              Create Account →
+            </button>
+
+            <p class="form-footer">Already registered? <a href="#help">Get help</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUCCESS PAGE: UPDATED DYNAMICALLY -->
+    <section id="success" class="page">
+      <div class="success-card">
+        <div class="success-icon">✓</div>
+        <span class="eyebrow">REGISTRATION COMPLETE</span>
+        <h1>You're on your way, <span id="successName">Learner</span>!</h1>
+        <p id="successMessage">Your account details have been validated.</p>
+        <div class="success-details" id="successDetails"></div>
+        <a href="#home" class="primary-btn">Back to Home →</a>
+      </div>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section id="about" class="page simple-page">
+      <span class="eyebrow">ABOUT US</span>
+      <h1>Where Data Meets <span>Intelligence.</span></h1>
+      <p>
+        Cognifyz Technologies specializes in data science and
+        technology solutions, including AI, machine learning,
+        and data analytics.
+      </p>
+      <a href="#register" class="primary-btn">Join the journey →</a>
+    </section>
+
+    <!-- HELP PAGE -->
+    <section id="help" class="page simple-page">
+      <span class="eyebrow">SUPPORT CENTER</span>
+      <h1>Need a little <span>help?</span></h1>
+      <p>Here are a few tips to complete your registration.</p>
+
+      <div class="help-box">
+        <h3>Password requirements</h3>
+        <p>Use 8 or more characters with uppercase, lowercase, a number, and a special character.</p>
+      </div>
+      <div class="help-box">
+        <h3>Email format</h3>
+        <p>Enter a valid email address, such as learner@example.com.</p>
+      </div>
+      <a href="#register" class="primary-btn">Return to Registration →</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>Cognifyz Technologies</span>
+    <span>Level 2 · Task 4 — Form Validation & DOM Manipulation</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
