@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Successful</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Application Submitted!</h1>
+        <p class="success-text">
+            Your application has been validated and stored temporarily.
+        </p>
+
+        <section class="result">
+            <h2>Application Details</h2>
+
+            <p><strong>Application ID:</strong> <%= application.id %></p>
+            <p><strong>Name:</strong> <%= application.name %></p>
+            <p><strong>Email:</strong> <%= application.email %></p>
+            <p><strong>Phone:</strong> <%= application.phone %></p>
+            <p><strong>Domain:</strong> <%= application.course %></p>
+            <p><strong>Message:</strong> <%= application.message %></p>
+            <p><strong>Submitted At:</strong> <%= application.submittedAt %></p>
+        </section>
+
+        <a href="/" class="back-button">Back to Form</a>
+        <a href="/applications" class="back-button">View Stored Applications (JSON)</a>
+    </main>
+
+</body>
+</html>
