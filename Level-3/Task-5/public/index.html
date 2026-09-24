@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cognifyz | Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">COGNIFYZ <span>TECHNOLOGIES</span></div>
+    <span class="api-status">● API CONNECTED</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">LEVEL 3 · TASK 5</p>
+      <h1>API Task Manager</h1>
+      <p>Manage your tasks with a RESTful API.</p>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span>Total Tasks</span>
+        <h2 id="totalCount">0</h2>
+      </div>
+      <div class="stat-card">
+        <span>Completed</span>
+        <h2 id="completedCount">0</h2>
+      </div>
+      <div class="stat-card">
+        <span>Pending</span>
+        <h2 id="pendingCount">0</h2>
+      </div>
+    </section>
+
+    <section class="task-panel">
+      <div class="panel-heading">
+        <div>
+          <h2>My Tasks</h2>
+          <p>Data fetched from your own server API</p>
+        </div>
+        <button class="refresh-btn" onclick="loadTasks()">↻ Refresh</button>
+      </div>
+
+      <form id="taskForm">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Enter a new task..."
+          maxlength="100"
+          required
+        >
+        <button type="submit" id="submitBtn">+ Add Task</button>
+      </form>
+
+      <p id="message"></p>
+      <div id="taskList"></div>
+    </section>
+
+    <section class="api-info">
+      <h3>API Endpoint</h3>
+      <code>GET /api/tasks</code>
+      <p>Express.js · REST API · Fetch API · JSON</p>
+    </section>
+  </main>
+
+  <footer>COGNIFYZ TECHNOLOGIES · FULL STACK INTERNSHIP</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
